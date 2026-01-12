@@ -32,7 +32,7 @@ def defineStrategies(genome):
         2: "HARRINGTON",  # 0010
         3: "BULLY",  # 0011
         # NICE (11xx)
-        12: "COMPLIANT",  # 1100
+        12: "ALL_C",  # 1100
         13: "TF2T",  # 1101
         14: "GRIM",  # 1110
         15: "TFT",  # 1111
@@ -171,7 +171,6 @@ def getMove(stratagy, oppHistory, chaos_state):
 
     # --- HISTORY REQUIRED ---
 
-
     elif stratagy == "GRIM":
         if D in oppHistory:
             return D
@@ -244,7 +243,7 @@ def defineStrategies(genome):
         2: "HARRINGTON",  # 0010
         3: "BULLY",  # 0011
         # NICE (11xx)
-        12: "COMPLIANT",  # 1100
+        12: "ALL_C",  # 1100
         13: "TF2T",  # 1101
         14: "GRIM",  # 1110
         15: "TFT",  # 1111
