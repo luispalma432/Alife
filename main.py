@@ -42,7 +42,28 @@ def defineStrategies(genome):
 
 
 def tournoment(player1, player2, rounds):
-    pass
+    for _ in range(rounds):
+        # 1. Get moves from both players
+        move1 = getMove(player1.strategy, player2.history, player1.chaos_state)
+        move2 = getMove(player2.strategy, player1.history, player2.chaos_state)
+
+        # 2. Update histories
+        player1.history.append(move1)
+        player2.history.append(move2)
+
+        # 3. Award points based on the scoring matrix
+        if move1 == 1 and move2 == 1:  # Both Cooperate
+            player1.points += 3
+            player2.points += 3
+        elif move1 == 0 and move2 == 0:  # Both Defect
+            player1.points += 1
+            player2.points += 1
+        elif move1 == 0 and move2 == 1:  # P1 Defects, P2 Cooperates
+            player1.points += 5
+            player2.points += 0
+        elif move1 == 1 and move2 == 0:  # P1 Cooperates, P2 Defects
+            player1.points += 0
+            player2.points += 5
 
 
     # random, Scale Free, regularLattice, smallWorld
