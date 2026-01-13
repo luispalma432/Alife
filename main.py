@@ -1,89 +1,18 @@
+import random
+
 import networkx as nx
 import orjson  # equivalente a json
 import plotly
 import polars as pl  # equivalente a pandas
-import random
 
-def scoring():
-    """
+"""
      Result(points)
     P1 P2  | P1 P2
     0  0   | 1  1
     0  1   | 0  5
     1  1   | 3  3
     1  0   | 0  5
-    """
-    pass
-
-def defineStrategies(genome):
-    # Convert list to integer
-    # Logic: (b3*8) + (b2*4) + (b1*2) + (b0*1)
-    value = (genome[0] << 3) | (genome[1] << 2) | (genome[2] << 1) | genome[3]
-
-    # If the integer is between 4 and 11, bits 3 and 2 are different (01xx or 10xx)
-    if 4 <= value <= 11:
-        return "CHAOTIC"
-
-    # Mapa em binário
-    strategy_map = {
-        # NASTY (00xx)
-        0: "ALL_D",  # 0000
-        1: "TESTER",  # 0001
-        2: "HARRINGTON",  # 0010
-        3: "BULLY",  # 0011
-        # NICE (11xx)
-        12: "ALL_C",  # 1100
-        13: "TF2T",  # 1101
-        14: "GRIM",  # 1110
-        15: "TFT",  # 1111
-    }
-
-    return strategy_map.get(value, "ERROR")
-
-
-def tournoment(player1, player2, rounds):
-    pass
-
-
-    # random, Scale Free, regularLattice, smallWorld
-    # random- teste de estrategia de forma individual
-    # Regular lattice rede 2D para cellular automata com deslocamento de moore
-    # SmallWorld- teste de estrategias em comunidades
-    #   variando o average path length e cluster coefficient
-    # Scale Free  resultados em distribuições desiguais
-    #  (presença de hubs e distribuições de população assimétrica e coesão preferencial)
-
-
-def create_network(N, k, rewire_prob, scale_free=False, regularLattice=False):
-    """
-    N (int): Population Size (Must be perfect square for 2D Lattice).
-    k (int): Average neighbors (Degree). Default 8 for Moore Neighborhood.
-    rewire_prob (float): 0.0 to 1.0 (Controls Ring -> Small World -> Random).
-    scale_free (bool): If True, overrides others to create Power Law hubs.
-    2d_lattice (bool): If True, overrides SW/Random to create 2D Grid (Moore).
-    """
-    # case 1 Power Law
-    if scale_free:
-        m = int(k / 2)  # New edges per node
-        return nx.barabasi_albert_graph(n=N, m=max(1, m), seed=42)
-
-    # case 2 Regular lattice 2D
-
-    # case 3 Watts-Strogatz Spectrum (Regular ring lattice, Small world, Random)
-
-    pass
-
-
-def genecticAlgorithm(population, mutation):
-
-
-    op= random.choice([COOP, DEFECT])
-    """
-    Verificar o desenvolvimento de populações e como afeta o sistema de Pontos
-    Mutação: Mudaça de um dos parametros bit flip
-              preferencial attacment
-    """
-    pass
+ """
 
 
 """
@@ -148,123 +77,156 @@ bit3 bit2 bit1 bit 0
 
 bit3 XOR bit2 random
 """
-import random
+
+
+# Constants
+C = 1
+D = 0
+
+
+def defineStrategies(genome):
+    value = (genome[0] << 3) | (genome[1] << 2) | (genome[2] << 1) | genome[3]
+    if 4 <= value <= 11:
+        return "CHAOTIC"
+
+    strategy_map = {
+        0: "ALL_D",
+        1: "TESTER",
+        2: "HARRINGTON",
+        3: "BULLY",
+        12: "ALL_C",
+        13: "TF2T",
+        14: "GRIM",
+        15: "TFT",
+    }
+    return strategy_map.get(value, "ERROR")
 
 
 def getMove(stratagy, oppHistory, chaos_state):
-    C = 1
-    D = 0
-
     round_id = len(oppHistory)
 
-    # --- NO HISTORY REQUIRED ---
     if stratagy == "ALL_D":
         return D
-
     elif stratagy == "ALL_C":
         return C
-
     elif stratagy == "CHAOTIC":
-        if chaos_state is None:
-            return random.choice([C, D])
-        return C if chaos_state > 0.5 else D
-
-    # --- HISTORY REQUIRED ---
+        return C if (chaos_state or 0.5) > 0.5 else D
 
     elif stratagy == "GRIM":
-        if D in oppHistory:
-            return D
-        return C
-
+        return D if D in oppHistory else C
 
     elif stratagy == "TFT":
-        if round_id == 0:
-            return C
-        return oppHistory[-1]
+        return C if round_id == 0 else oppHistory[-1]
 
     elif stratagy == "TF2T":
         if round_id < 2:
             return C
-        #  Defect only if last 2 were D. Correct.
-        if oppHistory[-1] == D and oppHistory[-2] == D:
-            return D
-        return C
-
-    # --- NASTY STRATEGIES ---
+        return D if (oppHistory[-1] == D and oppHistory[-2] == D) else C
 
     elif stratagy == "TESTER":
         if round_id == 0:
             return D
-        #  If they fought back (D), apologize (C). Correct.
-        if oppHistory[-1] == D:
-            return C
-        return D
+        return C if oppHistory[-1] == D else D
 
     elif stratagy == "HARRINGTON":
-        cycle_position = round_id % 4
-        # Coop on 4th turn (index 3). Correct.
-        if cycle_position == 3:
-            return C
-        return D
+        return C if (round_id % 4 == 3) else D
 
     elif stratagy == "BULLY":
         if round_id == 0:
             return D
-        #  If they are nice, exploit them. Correct.
-        if oppHistory[-1] == C:
-            return D
-        # If they fight back, back down.
-        return C
+        return D if oppHistory[-1] == C else C
 
-    else:
-        # Default safety
-        return C
+    return C
 
 
+def scoring(move1, move2):
+    if move1 == C and move2 == C:
+        return [3, 3]
+    if move1 == D and move2 == C:
+        return [5, 0]
+    if move1 == C and move2 == D:
+        return [0, 5]
+    if move1 == D and move2 == D:
+        return [1, 1]  # Fixed typo: was 0 and 1
+    return [0, 0]
 
 
+def tournament(player1, player2, rounds):
+    total_score1, total_score2 = 0, 0
+    history1, history2 = [], []
+
+    # Initialize chaos state
+    chaos_state = random.random()
+
+    for _ in range(rounds):  # Fixed: added range()
+        p1_move = getMove(player1, history1, chaos_state)
+        p2_move = getMove(player2, history2, chaos_state)
+
+        res = scoring(p1_move, p2_move)
+        total_score1 += res[0]
+        total_score2 += res[1]  # Fixed: was res[0]
+
+        history1.append(p2_move)
+        history2.append(p1_move)
+
+        # Update Chaos State (Logistic Map)
+        chaos_state = 4.0 * chaos_state * (1.0 - chaos_state)
+
+    return [total_score1, total_score2]
 
 
+def individualAvaliation():
+    stratagies_genomes = [
+        [0, 0, 0, 0],
+        [0, 0, 0, 1],
+        [0, 0, 1, 1],
+        [0, 0, 1, 0],  # Nasty
+        [1, 1, 0, 0],
+        [1, 1, 0, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 0],  # Nice
+        [0, 1, 0, 0],
+        [1, 0, 0, 0],  # Chaotic
+    ]
 
-def defineStrategies(genome):
-    # Convert list to integer
-    # Logic: (b3*8) + (b2*4) + (b1*2) + (b0*1)
-    value = (genome[0] << 3) | (genome[1] << 2) | (genome[2] << 1) | genome[3]
+    strategy_sum_scores = {}
+    iterations = 5
 
-    # If the integer is between 4 and 11, bits 3 and 2 are different (01xx or 10xx)
-    if 4 <= value <= 11:
-        return "CHAOTIC"
+    # Initialize keys in dictionary
+    for g in stratagies_genomes:
+        name = defineStrategies(g)
+        if name not in strategy_sum_scores:
+            strategy_sum_scores[name] = 0
 
-    # Mapa em binário
-    strategy_map = {
-        # NASTY (00xx)
-        0: "ALL_D",  # 0000
-        1: "TESTER",  # 0001
-        2: "HARRINGTON",  # 0010
-        3: "BULLY",  # 0011
-        # NICE (11xx)
-        12: "ALL_C",  # 1100
-        13: "TF2T",  # 1101
-        14: "GRIM",  # 1110
-        15: "TFT",  # 1111
-    }
+    for g1 in stratagies_genomes:
+        for g2 in stratagies_genomes:
+            p1 = defineStrategies(g1)
+            p2 = defineStrategies(g2)
 
-    return strategy_map.get(value, "ERROR")
+            for _ in range(iterations):
+                num_rounds = random.choice([180, 200, 220])
+                scores = tournament(p1, p2, num_rounds)
+
+                strategy_sum_scores[p1] += scores[0]
+                strategy_sum_scores[p2] += scores[1]
+
+    # Analysis
+    total_matches_per_strat = len(stratagies_genomes) * iterations
+    final_results = []
+
+    print(f"{'Strategy':<15} | {'Avg Tourney Score':<20}")
+    print("-" * 40)
+
+    for name, total_sum in strategy_sum_scores.items():
+        avg_score = total_sum / total_matches_per_strat
+        print(f"{name:<15} | {avg_score:>18.2f}")
+        final_results.append({"strategy": name, "avg_tourney_score": avg_score})
+
+    with open("individual_baseline.json", "wb") as f:
+        f.write(orjson.dumps(final_results, option=orjson.OPT_INDENT_2))
+
+    print("\nDONE: Results saved.")
 
 
-
-
-
-
-
-def individualAvaliation(list):
-    """
-    Lista de tecnicas utilizadas realizar 1x1 e torneio com (180-220 rondas) 5X
-    Media de pontos nos 5 torneios para cada estrategia
-
-    [0000, 0001, 0011, 0010 , 1100, 1101, 1111, 1010, 0100, 1000]
-    primeiros 2 bits seleciona
-    """
-    op=random.choice([COOP, DEFECT])
-
-    pass
+if __name__ == "__main__":
+    individualAvaliation()
