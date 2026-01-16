@@ -1,9 +1,11 @@
 import random
+import agent
 
 import networkx as nx
 import orjson  # equivalente a json
 import plotly
 import polars as pl  #
+
 
 """
      Result(points)
@@ -149,6 +151,30 @@ def getMove(stratagy, oppHistory, chaos_state):
 
 
 def tournament(player1, player2, rounds):
+    for _ in range(rounds):
+        # 1. Get moves from both players
+        move1 = getMove(player1.strategy, player2.history, player1.chaos_state)
+        move2 = getMove(player2.strategy, player1.history, player2.chaos_state)
+
+        # 2. Update histories
+        player1.history.append(move1)
+        player2.history.append(move2)
+
+        # 3. Award points based on the scoring matrix
+        if move1 == 1 and move2 == 1:  # Both Cooperate
+            player1.points += 3
+            player2.points += 3
+        elif move1 == 0 and move2 == 0:  # Both Defect
+            player1.points += 1
+            player2.points += 1
+        elif move1 == 0 and move2 == 1:  # P1 Defects, P2 Cooperates
+            player1.points += 5
+            player2.points += 0
+        elif move1 == 1 and move2 == 0:  # P1 Cooperates, P2 Defects
+            player1.points += 0
+            player2.points += 5
+    return [player1.points, player2.points]
+    '''
     total_score1, total_score2 = 0, 0
     history1, history2 = [], []
 
@@ -170,6 +196,7 @@ def tournament(player1, player2, rounds):
         chaos_state = 4.0 * chaos_state * (1.0 - chaos_state)
 
     return [total_score1, total_score2]
+    '''
 
 
 def individualAvaliation():
@@ -225,5 +252,40 @@ def individualAvaliation():
     print("\nDONE: Results saved.")
 
 
-def generatePopulation(type):
-    return
+
+def generatePopulation(individuals):
+    population = []
+    for _ in range(individuals):
+        genome = [random.randint(0, 1) for _ in range(4)]
+        population.append(agent.Agent(genome))
+    return population
+
+def geneticAlgorithm(population, generations=1, mutation_rate=0.01):
+    for gen in range(generations):
+        # 1. battle phase
+        for i in range(len(population)):
+            for j in range(i+1, len(population)):
+                tournament(population[i], population[j], rounds=200)
+        # 2. selection phase
+        population.sort(key=lambda agent: agent.points, reverse=True)
+        next_gen_parents = population[:50]
+        print(f"Gen {gen + 1} Top Strategy: {next_gen_parents[0].strategy} ({next_gen_parents[0].points} pts)")
+
+        # 3. reproduction phase
+        new_population = []
+        while len(new_population) < 100:
+            p1, p2 = random.sample(next_gen_parents, 2)
+            p1.reset() #Reset points and history
+            p2.reset()
+
+            # Crossover (Bit Splitting)
+            point = random.randint(1, 3)
+            child_genome = p1.genome[:point] + p2.genome[point:]
+
+            # Mutation (Bit Flip)
+            if random.random() < mutation_rate:
+                idx = random.randint(0, 3)
+                child_genome[idx] = 1 - child_genome[idx]
+
+            new_population.append(agent.Agent(genome=child_genome))
+    return population
