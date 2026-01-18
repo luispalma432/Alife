@@ -1,0 +1,65 @@
+[
+  {
+    "strategy": "ALL_D",
+    "avg_tourney_score": 508.13,
+    "node_count": 47,
+    "total_links": 379,
+    "unique_matches": 189
+  },
+  {
+    "strategy": "TESTER",
+    "avg_tourney_score": 385.74,
+    "node_count": 36,
+    "total_links": 280,
+    "unique_matches": 140
+  },
+  {
+    "strategy": "BULLY",
+    "avg_tourney_score": 381.8,
+    "node_count": 36,
+    "total_links": 293,
+    "unique_matches": 146
+  },
+  {
+    "strategy": "HARRINGTON",
+    "avg_tourney_score": 485.79,
+    "node_count": 37,
+    "total_links": 288,
+    "unique_matches": 144
+  },
+  {
+    "strategy": "ALL_C",
+    "avg_tourney_score": 337.61,
+    "node_count": 31,
+    "total_links": 251,
+    "unique_matches": 125
+  },
+  {
+    "strategy": "TF2T",
+    "avg_tourney_score": 442.7,
+    "node_count": 56,
+    "total_links": 439,
+    "unique_matches": 219
+  },
+  {
+    "strategy": "TFT",
+    "avg_tourney_score": 462.93,
+    "node_count": 39,
+    "total_links": 304,
+    "unique_matches": 152
+  },
+  {
+    "strategy": "GRIM",
+    "avg_tourney_score": 600.28,
+    "node_count": 37,
+    "total_links": 311,
+    "unique_matches": 155
+  },
+  {
+    "strategy": "CHAOTIC",
+    "avg_tourney_score": 391.83,
+    "node_count": 81,
+    "total_links": 655,
+    "unique_matches": 327
+  }
+]
