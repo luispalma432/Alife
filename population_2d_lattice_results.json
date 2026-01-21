@@ -1,65 +1,51 @@
 [
   {
-    "strategy": "ALL_D",
-    "avg_tourney_score": 497.91,
-    "node_count": 107,
-    "total_links": 856,
-    "unique_matches": 428
-  },
-  {
-    "strategy": "TESTER",
-    "avg_tourney_score": 388.51,
-    "node_count": 89,
-    "total_links": 712,
-    "unique_matches": 356
-  },
-  {
-    "strategy": "BULLY",
-    "avg_tourney_score": 403.0,
-    "node_count": 101,
-    "total_links": 808,
-    "unique_matches": 404
-  },
-  {
-    "strategy": "HARRINGTON",
-    "avg_tourney_score": 475.68,
-    "node_count": 110,
-    "total_links": 880,
-    "unique_matches": 440
-  },
-  {
-    "strategy": "ALL_C",
-    "avg_tourney_score": 318.37,
-    "node_count": 96,
-    "total_links": 768,
-    "unique_matches": 384
-  },
-  {
-    "strategy": "TF2T",
-    "avg_tourney_score": 446.89,
-    "node_count": 109,
-    "total_links": 872,
-    "unique_matches": 436
-  },
-  {
-    "strategy": "TFT",
-    "avg_tourney_score": 467.74,
-    "node_count": 116,
-    "total_links": 928,
-    "unique_matches": 464
-  },
-  {
     "strategy": "GRIM",
-    "avg_tourney_score": 569.21,
-    "node_count": 115,
-    "total_links": 920,
-    "unique_matches": 460
+    "avg_tourney_score": 638.64,
+    "node_count": 375,
+    "total_links": 3000,
+    "unique_matches": 1500
   },
   {
     "strategy": "CHAOTIC",
-    "avg_tourney_score": 414.05,
-    "node_count": 181,
-    "total_links": 1448,
-    "unique_matches": 724
+    "avg_tourney_score": 410.9,
+    "node_count": 98,
+    "total_links": 784,
+    "unique_matches": 392
+  },
+  {
+    "strategy": "ALL_D",
+    "avg_tourney_score": 409.04,
+    "node_count": 56,
+    "total_links": 448,
+    "unique_matches": 224
+  },
+  {
+    "strategy": "BULLY",
+    "avg_tourney_score": 396.67,
+    "node_count": 10,
+    "total_links": 80,
+    "unique_matches": 40
+  },
+  {
+    "strategy": "TESTER",
+    "avg_tourney_score": 358.81,
+    "node_count": 417,
+    "total_links": 3336,
+    "unique_matches": 1668
+  },
+  {
+    "strategy": "ALL_C",
+    "avg_tourney_score": 288.0,
+    "node_count": 4,
+    "total_links": 32,
+    "unique_matches": 16
+  },
+  {
+    "strategy": "TF2T",
+    "avg_tourney_score": 0,
+    "node_count": 1,
+    "total_links": 8,
+    "unique_matches": 4
   }
 ]

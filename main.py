@@ -1,10 +1,4 @@
-import math
-import random
-
-import networkx as nx
 import orjson
-import polars as pl
-from networkx.classes.function import neighbors
 
 import functions as fc
 
@@ -21,7 +15,17 @@ stratagies_genomes = [
     [1, 0, 0, 0],  # Chaotic
 ]
 
+"""
+função
+numero de nós
+average degree
+tipo de população
+mutation rate
+iterations
 
-if __name__ == "__main__":
-    # fc.individualAvaliation()
-    fc.populationAvaliation(nodes=100000, type="SCALE_FREE")
+"""
+
+
+data_results = fc.gaSimulation(
+    N=1000, k=8, type="SCALE_FREE", mutation_rate=0.01, generations=30
+)

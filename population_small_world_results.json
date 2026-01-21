@@ -1,65 +1,44 @@
 [
   {
-    "strategy": "ALL_D",
-    "avg_tourney_score": 545.86,
-    "node_count": 43,
-    "total_links": 342,
-    "unique_matches": 171
-  },
-  {
-    "strategy": "TESTER",
-    "avg_tourney_score": 392.59,
-    "node_count": 33,
-    "total_links": 262,
-    "unique_matches": 131
-  },
-  {
-    "strategy": "BULLY",
-    "avg_tourney_score": 410.06,
-    "node_count": 30,
-    "total_links": 232,
-    "unique_matches": 116
-  },
-  {
-    "strategy": "HARRINGTON",
-    "avg_tourney_score": 476.44,
-    "node_count": 36,
-    "total_links": 286,
-    "unique_matches": 143
-  },
-  {
-    "strategy": "ALL_C",
-    "avg_tourney_score": 355.64,
-    "node_count": 52,
-    "total_links": 425,
-    "unique_matches": 212
-  },
-  {
-    "strategy": "TF2T",
-    "avg_tourney_score": 446.17,
-    "node_count": 36,
-    "total_links": 290,
-    "unique_matches": 145
+    "strategy": "GRIM",
+    "avg_tourney_score": 623.66,
+    "node_count": 658,
+    "total_links": 5261,
+    "unique_matches": 2630
   },
   {
     "strategy": "TFT",
-    "avg_tourney_score": 470.8,
-    "node_count": 51,
-    "total_links": 410,
-    "unique_matches": 205
+    "avg_tourney_score": 593.0,
+    "node_count": 84,
+    "total_links": 669,
+    "unique_matches": 334
   },
   {
-    "strategy": "GRIM",
-    "avg_tourney_score": 560.3,
-    "node_count": 47,
-    "total_links": 377,
-    "unique_matches": 188
+    "strategy": "TF2T",
+    "avg_tourney_score": 584.38,
+    "node_count": 33,
+    "total_links": 272,
+    "unique_matches": 136
+  },
+  {
+    "strategy": "ALL_C",
+    "avg_tourney_score": 578.51,
+    "node_count": 29,
+    "total_links": 231,
+    "unique_matches": 115
   },
   {
     "strategy": "CHAOTIC",
-    "avg_tourney_score": 422.37,
-    "node_count": 72,
-    "total_links": 576,
-    "unique_matches": 288
+    "avg_tourney_score": 418.81,
+    "node_count": 24,
+    "total_links": 198,
+    "unique_matches": 99
+  },
+  {
+    "strategy": "TESTER",
+    "avg_tourney_score": 270.38,
+    "node_count": 172,
+    "total_links": 1369,
+    "unique_matches": 684
   }
 ]
