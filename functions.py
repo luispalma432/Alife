@@ -174,29 +174,52 @@ def tournament(player1, player2, rounds):
             player1.points += 0
             player2.points += 5
     return [player1.points, player2.points]
-    '''
-    total_score1, total_score2 = 0, 0
-    history1, history2 = [], []
 
-    # Initialize chaos state
-    chaos_state = random.random()
+def tournament_RL(player1, rl_agent, rounds):
+    reward = 0
+    for _ in range(rounds):
+        # 1. Get moves from both players
+        move1 = getMove(player1.strategy, rl_agent.history, player1.chaos_state)
+        move2 = rl_agent.choose_action(rl_agent.get_state(rl_agent.history, player1.history))
 
-    for _ in range(rounds):  # Fixed: added range()
-        p1_move = getMove(player1, history1, chaos_state)
-        p2_move = getMove(player2, history2, chaos_state)
+        # 2. Update histories
+        player1.history.append(move1)
+        rl_agent.history.append(move2)
 
-        res = scoring(p1_move, p2_move)
-        total_score1 += res[0]
-        total_score2 += res[1]  # Fixed: was res[0]
+        # 3. Award points based on the scoring matrix
+        if move1 == 1 and move2 == 1:  # Both Cooperate
+            player1.points += 3
+            rl_agent.points += 3
+            reward = 3
+        elif move1 == 0 and move2 == 0:  # Both Defect
+            player1.points += 1
+            rl_agent.points += 1
+            reward = 1
+        elif move1 == 0 and move2 == 1:  # P1 Defects, P2 Cooperates
+            player1.points += 5
+            rl_agent.points += 0
+            reward = 0
+        elif move1 == 1 and move2 == 0:  # P1 Cooperates, P2 Defects
+            player1.points += 0
+            rl_agent.points += 5
+            reward = 5
 
-        history1.append(p2_move)
-        history2.append(p1_move)
+        # Get the next state
+        next_state = rl_agent.get_state(rl_agent.history, player1.history)
+        # Uptade last state and action
+        rl_agent.last_state = next_state
+        rl_agent.last_action = move2
+        # Uptade Q-Table
+        rl_agent.learn(rl_agent.last_state, rl_agent.last_action, reward, next_state)
 
-        # Update Chaos State (Logistic Map)
-        chaos_state = 4.0 * chaos_state * (1.0 - chaos_state)
-
-    return [total_score1, total_score2]
-    '''
+    points = rl_agent.points - player1.points
+    if points > 0:
+        print(f"RL Agent won against {player1.strategy} by {points} points.")
+    elif points < 0:
+        print(f"{player1.strategy} won against RL Agent by {-points} points.")
+    else:
+        print(f"RL Agent tied against {player1.strategy}.")
+    return [player1.points, rl_agent.points]
 
 
 def individualAvaliation():
