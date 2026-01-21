@@ -546,6 +546,7 @@ def gaSimulation(N, k, type, mutation_rate, generations):
     data_results.append(results)
 
     for i in range(generations):
+        print(f" GENERATION {i + 1}")
         next_gen_map = run_evolution_step(
             population_List, node_scores, current_map, mutation_rate=mutation_rate
         )
