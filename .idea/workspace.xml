@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f0e9dd5-3ebc-4959-91e5-3a9ed34ac488" name="Changes" comment="- Tournament logic created&#10;- Class agent created&#10;- Logic for GA created in battle.py" />
+    <list default="true" id="2f0e9dd5-3ebc-4959-91e5-3a9ed34ac488" name="Changes" comment="- Tournament logic created&#10;- Class agent created&#10;- Logic for GA created in battle.py">
+      <change afterPath="$PROJECT_DIR$/visualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GAsimulation_results_SMALL_WORLD_1000_30.json" beforeDir="false" afterPath="$PROJECT_DIR$/GAsimulation_results_SMALL_WORLD_1000_30.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/population_2d_lattice_results.json" beforeDir="false" afterPath="$PROJECT_DIR$/population_2d_lattice_results.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/population_small_world_results.json" beforeDir="false" afterPath="$PROJECT_DIR$/population_small_world_results.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="agent" />
+        <entry key="$PROJECT_DIR$" value="Reinforcement-Learning" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,6 +58,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.battle.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.visualization.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",

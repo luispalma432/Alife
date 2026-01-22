@@ -1,51 +1,65 @@
 [
   {
-    "strategy": "GRIM",
-    "avg_tourney_score": 638.64,
-    "node_count": 375,
-    "total_links": 3000,
-    "unique_matches": 1500
-  },
-  {
-    "strategy": "CHAOTIC",
-    "avg_tourney_score": 410.9,
-    "node_count": 98,
-    "total_links": 784,
-    "unique_matches": 392
-  },
-  {
-    "strategy": "ALL_D",
-    "avg_tourney_score": 409.04,
-    "node_count": 56,
-    "total_links": 448,
-    "unique_matches": 224
-  },
-  {
-    "strategy": "BULLY",
-    "avg_tourney_score": 396.67,
-    "node_count": 10,
-    "total_links": 80,
-    "unique_matches": 40
-  },
-  {
-    "strategy": "TESTER",
-    "avg_tourney_score": 358.81,
-    "node_count": 417,
-    "total_links": 3336,
-    "unique_matches": 1668
-  },
-  {
     "strategy": "ALL_C",
-    "avg_tourney_score": 288.0,
-    "node_count": 4,
-    "total_links": 32,
-    "unique_matches": 16
-  },
-  {
-    "strategy": "TF2T",
-    "avg_tourney_score": 0,
+    "avg_tourney_score": 604.5,
     "node_count": 1,
     "total_links": 8,
     "unique_matches": 4
+  },
+  {
+    "strategy": "GRIM",
+    "avg_tourney_score": 580.28,
+    "node_count": 722,
+    "total_links": 5776,
+    "unique_matches": 2888
+  },
+  {
+    "strategy": "TF2T",
+    "avg_tourney_score": 564.3,
+    "node_count": 89,
+    "total_links": 712,
+    "unique_matches": 356
+  },
+  {
+    "strategy": "TFT",
+    "avg_tourney_score": 514.37,
+    "node_count": 27,
+    "total_links": 216,
+    "unique_matches": 108
+  },
+  {
+    "strategy": "CHAOTIC",
+    "avg_tourney_score": 345.15,
+    "node_count": 29,
+    "total_links": 232,
+    "unique_matches": 116
+  },
+  {
+    "strategy": "BULLY",
+    "avg_tourney_score": 326.41,
+    "node_count": 33,
+    "total_links": 264,
+    "unique_matches": 132
+  },
+  {
+    "strategy": "HARRINGTON",
+    "avg_tourney_score": 257.66,
+    "node_count": 6,
+    "total_links": 48,
+    "unique_matches": 24
+  },
+  {
+    "strategy": "ALL_D",
+    "avg_tourney_score": 245.7,
+    "node_count": 52,
+    "total_links": 416,
+    "unique_matches": 208
+  },
+  {
+    "strategy": "TESTER",
+    "avg_tourney_score": 147.28,
+    "node_count": 2,
+    "total_links": 16,
+    "unique_matches": 8
   }
 ]
