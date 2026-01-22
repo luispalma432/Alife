@@ -182,14 +182,14 @@ def tournament(player1, player2, rounds):
         history2.append(p1_move)
 
         # Update Chaos State (Logistic Map)
-        # chaos_state = 4.0 * chaos_state * (1.0 - chaos_state)
+        chaos_state = 4.0 * chaos_state * (1.0 - chaos_state)
 
     return [total_score1, total_score2]
 
 
 def individualEvaluation():
     strategy_sum_scores = {}
-    strategy_match_counts = {}  # Added to track actual matches
+    strategy_match_counts = {}
     iterations = 5
 
     # Initialize dictionaries
@@ -216,24 +216,22 @@ def individualEvaluation():
                 strategy_match_counts[p2] += 1
 
     final_results = []
+    """
     print("\n--- Corrected Individual Baseline ---")
     print(f"{'Strategy':<15} | {'Avg Tourney Score':<20}")
     print("-" * 40)
-
+    """
     for name in strategy_sum_scores:
         total_sum = strategy_sum_scores[name]
         total_matches = strategy_match_counts[name]
 
-        # Calculate true average per tournament
         avg_score = total_sum / total_matches if total_matches > 0 else 0
 
-        print(f"{name:<15} | {avg_score:>15.1f}")
+        # print(f"{name:<15} | {avg_score:>15.1f}")
         final_results.append({"strategy": name, "avg_tourney_score": avg_score})
-    """
-    # Save to JSON
+
     with open("individual_baseline_fixed.json", "wb") as f:
         f.write(orjson.dumps(final_results, option=orjson.OPT_INDENT_2))
-    """
 
 
 def generatePopulations(N, k, type):
@@ -241,7 +239,6 @@ def generatePopulations(N, k, type):
         return nx.watts_strogatz_graph(n=N, k=k, p=1.0, seed=42)
 
     elif type == "SMALL_WORLD":
-        # Note: 'side' isn't needed here, just return the graph
         return nx.watts_strogatz_graph(n=N, k=k, p=0.1, seed=42)
 
     elif type == "2D_LATTICE":
@@ -306,12 +303,12 @@ def generateEadgeList(G, genomeList):
 
 
 def populationEvaluation(population, type, population_List, node_Data_Map):
+    """
+    Avalia a população atual jogando o torneio.
+    NOTA: Removida a escrita de arquivo JSON interna para evitar sobrescrever dados.
+    """
     iterations = 5
     nodes = population.number_of_nodes()
-
-    # population = generatePopulations(N=nodes, k=neighbors, type=type)
-
-    # population_List, node_Data_Map = generateEadgeList(population, stratagies_genomes)
 
     strategy_sum_scores = {}
     strategy_match_counts = {}
@@ -320,7 +317,6 @@ def populationEvaluation(population, type, population_List, node_Data_Map):
 
     node_scores = {node_id: 0 for node_id in node_Data_Map}
 
-    # Initialize Strategy Keys
     for g in stratagies_genomes:
         name = defineStrategies(g)
         if name not in strategy_sum_scores:
@@ -335,7 +331,6 @@ def populationEvaluation(population, type, population_List, node_Data_Map):
         strategy_node_counts[name] += 1
         strategy_total_links[name] += degree
 
-    # This avoids calling Polars inside the loop (Massive Speedup)
     p1_names = population_List["p1_name"].to_list()
     p2_names = population_List["p2_name"].to_list()
     p1_ids = population_List["p1_id"].to_list()
@@ -379,7 +374,7 @@ def populationEvaluation(population, type, population_List, node_Data_Map):
 
     # Sort Descending (Best Strategy First)
     final_results.sort(key=lambda x: x["avg_tourney_score"], reverse=True)
-
+    """
     print(f"\n--- Population Evaluation ({type}) Population Size({nodes}) ---")
     print(f"{'Strategy':<15} | {'Avg Score':<12} | {'Nodes':<8} | {'Total Links':<12}")
     print("-" * 60)
@@ -388,11 +383,7 @@ def populationEvaluation(population, type, population_List, node_Data_Map):
         print(
             f"{res['strategy']:<15} | {res['avg_tourney_score']:>12.1f} | {res['node_count']:>8} | {res['total_links']:>12}"
         )
-
-    filename = f"population_{type.lower()}_results.json"
-    with open(filename, "wb") as f:
-        f.write(orjson.dumps(final_results, option=orjson.OPT_INDENT_2))
-
+    """
     return final_results, node_scores, population_List, node_Data_Map
 
 
@@ -535,23 +526,27 @@ def update_edge_list(previous_df, current_node_map):
 
 
 def gaSimulation(N, k, type, mutation_rate, generations):
-    output = f"GAsimulation_results_{type}_{N}_{generations}.json"
-    # structure to save final results from each generation in JSON
+    output_file = f"results_{type}_{N}_{generations}_{k}.json"
+
     data_results = []
 
-    # incialize population first gen
+    # print(f"--- STARTING SIMULATION: {type} (N={N}, Gens={generations}) ---")
+
     results, node_scores, population_List, current_map, inicial_population_graph = (
         inicializeGa(N=N, K=k, type=type)
     )
-    data_results.append(results)
 
-    for i in range(generations):
-        print(f" GENERATION {i + 1}")
+    data_results.append({"generation": 0, "stats": results})
+
+    for i in range(1, generations + 1):
+        # print(f"\n=== GENERATION {i} ===")
+
         next_gen_map = run_evolution_step(
             population_List, node_scores, current_map, mutation_rate=mutation_rate
         )
 
-        population_List = update_edge_list(population_List, current_map)
+        population_List = update_edge_list(population_List, next_gen_map)
+
         current_map = next_gen_map
 
         finalResults, node_scores, population_List, current_map = populationEvaluation(
@@ -560,12 +555,13 @@ def gaSimulation(N, k, type, mutation_rate, generations):
             population_List=population_List,
             node_Data_Map=current_map,
         )
-        data_results.append(finalResults)
+
+        data_results.append({"generation": i, "stats": finalResults})
 
     try:
-        with open(output, "wb") as f:
+        with open(output_file, "wb") as f:
             f.write(orjson.dumps(data_results, option=orjson.OPT_INDENT_2))
-        print(f"\nSUCCESS: Full simulation history saved to '{output}'")
+        print(f"\nSUCCESS: Full simulation history saved to '{output_file}'")
     except Exception as e:
         print(f"ERROR: Could not save JSON file. {e}")
 

@@ -1,0 +1,1460 @@
+[
+  {
+    "generation": 0,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 635.17,
+        "node_count": 98,
+        "total_links": 1961,
+        "unique_matches": 980
+      },
+      {
+        "strategy": "ALL_D",
+        "avg_tourney_score": 568.46,
+        "node_count": 87,
+        "total_links": 1749,
+        "unique_matches": 874
+      },
+      {
+        "strategy": "HARRINGTON",
+        "avg_tourney_score": 493.69,
+        "node_count": 104,
+        "total_links": 2089,
+        "unique_matches": 1044
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 475.14,
+        "node_count": 82,
+        "total_links": 1638,
+        "unique_matches": 819
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 427.19,
+        "node_count": 93,
+        "total_links": 1868,
+        "unique_matches": 934
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 405.53,
+        "node_count": 212,
+        "total_links": 4243,
+        "unique_matches": 2121
+      },
+      {
+        "strategy": "TESTER",
+        "avg_tourney_score": 388.18,
+        "node_count": 117,
+        "total_links": 2309,
+        "unique_matches": 1154
+      },
+      {
+        "strategy": "BULLY",
+        "avg_tourney_score": 387.98,
+        "node_count": 117,
+        "total_links": 2346,
+        "unique_matches": 1173
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 297.0,
+        "node_count": 90,
+        "total_links": 1797,
+        "unique_matches": 898
+      }
+    ]
+  },
+  {
+    "generation": 1,
+    "stats": [
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 538.28,
+        "node_count": 1,
+        "total_links": 18,
+        "unique_matches": 9
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 525.71,
+        "node_count": 681,
+        "total_links": 13603,
+        "unique_matches": 6801
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 472.84,
+        "node_count": 3,
+        "total_links": 62,
+        "unique_matches": 31
+      },
+      {
+        "strategy": "ALL_D",
+        "avg_tourney_score": 212.18,
+        "node_count": 275,
+        "total_links": 5507,
+        "unique_matches": 2753
+      },
+      {
+        "strategy": "HARRINGTON",
+        "avg_tourney_score": 198.29,
+        "node_count": 37,
+        "total_links": 748,
+        "unique_matches": 374
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 111.8,
+        "node_count": 2,
+        "total_links": 41,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "BULLY",
+        "avg_tourney_score": 49.86,
+        "node_count": 1,
+        "total_links": 21,
+        "unique_matches": 10
+      }
+    ]
+  },
+  {
+    "generation": 2,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 598.53,
+        "node_count": 987,
+        "total_links": 19743,
+        "unique_matches": 9871
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 598.4,
+        "node_count": 5,
+        "total_links": 99,
+        "unique_matches": 49
+      },
+      {
+        "strategy": "ALL_D",
+        "avg_tourney_score": 204.0,
+        "node_count": 4,
+        "total_links": 78,
+        "unique_matches": 39
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 115.05,
+        "node_count": 4,
+        "total_links": 80,
+        "unique_matches": 40
+      }
+    ]
+  },
+  {
+    "generation": 3,
+    "stats": [
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 600.92,
+        "node_count": 2,
+        "total_links": 39,
+        "unique_matches": 19
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.33,
+        "node_count": 990,
+        "total_links": 19802,
+        "unique_matches": 9901
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 600.0,
+        "node_count": 1,
+        "total_links": 21,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 111.34,
+        "node_count": 7,
+        "total_links": 138,
+        "unique_matches": 69
+      }
+    ]
+  },
+  {
+    "generation": 4,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.06,
+        "node_count": 990,
+        "total_links": 19809,
+        "unique_matches": 9904
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 597.08,
+        "node_count": 2,
+        "total_links": 37,
+        "unique_matches": 18
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 596.78,
+        "node_count": 5,
+        "total_links": 97,
+        "unique_matches": 48
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 106.74,
+        "node_count": 3,
+        "total_links": 57,
+        "unique_matches": 28
+      }
+    ]
+  },
+  {
+    "generation": 5,
+    "stats": [
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 607.8,
+        "node_count": 1,
+        "total_links": 20,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.81,
+        "node_count": 989,
+        "total_links": 19787,
+        "unique_matches": 9893
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 595.79,
+        "node_count": 3,
+        "total_links": 57,
+        "unique_matches": 28
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 111.7,
+        "node_count": 7,
+        "total_links": 136,
+        "unique_matches": 68
+      }
+    ]
+  },
+  {
+    "generation": 6,
+    "stats": [
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 604.86,
+        "node_count": 2,
+        "total_links": 42,
+        "unique_matches": 21
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.21,
+        "node_count": 993,
+        "total_links": 19860,
+        "unique_matches": 9930
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 597.23,
+        "node_count": 2,
+        "total_links": 39,
+        "unique_matches": 19
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 107.32,
+        "node_count": 3,
+        "total_links": 59,
+        "unique_matches": 29
+      }
+    ]
+  },
+  {
+    "generation": 7,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.12,
+        "node_count": 970,
+        "total_links": 19399,
+        "unique_matches": 9699
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 600.0,
+        "node_count": 1,
+        "total_links": 19,
+        "unique_matches": 9
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.09,
+        "node_count": 23,
+        "total_links": 465,
+        "unique_matches": 232
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 109.95,
+        "node_count": 6,
+        "total_links": 117,
+        "unique_matches": 58
+      }
+    ]
+  },
+  {
+    "generation": 8,
+    "stats": [
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 600.63,
+        "node_count": 1,
+        "total_links": 19,
+        "unique_matches": 9
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.18,
+        "node_count": 949,
+        "total_links": 18975,
+        "unique_matches": 9487
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.36,
+        "node_count": 47,
+        "total_links": 946,
+        "unique_matches": 473
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 114.11,
+        "node_count": 3,
+        "total_links": 60,
+        "unique_matches": 30
+      }
+    ]
+  },
+  {
+    "generation": 9,
+    "stats": [
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 600.96,
+        "node_count": 70,
+        "total_links": 1408,
+        "unique_matches": 704
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.87,
+        "node_count": 927,
+        "total_links": 18535,
+        "unique_matches": 9267
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 157.14,
+        "node_count": 3,
+        "total_links": 57,
+        "unique_matches": 28
+      }
+    ]
+  },
+  {
+    "generation": 10,
+    "stats": [
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 604.24,
+        "node_count": 1,
+        "total_links": 17,
+        "unique_matches": 8
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.31,
+        "node_count": 931,
+        "total_links": 18612,
+        "unique_matches": 9306
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.15,
+        "node_count": 65,
+        "total_links": 1309,
+        "unique_matches": 654
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 583.72,
+        "node_count": 1,
+        "total_links": 20,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 227.18,
+        "node_count": 2,
+        "total_links": 42,
+        "unique_matches": 21
+      }
+    ]
+  },
+  {
+    "generation": 11,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.59,
+        "node_count": 935,
+        "total_links": 18698,
+        "unique_matches": 9349
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 597.84,
+        "node_count": 58,
+        "total_links": 1164,
+        "unique_matches": 582
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 594.04,
+        "node_count": 3,
+        "total_links": 59,
+        "unique_matches": 29
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 187.17,
+        "node_count": 4,
+        "total_links": 79,
+        "unique_matches": 39
+      }
+    ]
+  },
+  {
+    "generation": 12,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.72,
+        "node_count": 925,
+        "total_links": 18492,
+        "unique_matches": 9246
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.04,
+        "node_count": 66,
+        "total_links": 1326,
+        "unique_matches": 663
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 597.0,
+        "node_count": 1,
+        "total_links": 20,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 593.36,
+        "node_count": 3,
+        "total_links": 61,
+        "unique_matches": 30
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 166.05,
+        "node_count": 5,
+        "total_links": 101,
+        "unique_matches": 50
+      }
+    ]
+  },
+  {
+    "generation": 13,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.33,
+        "node_count": 929,
+        "total_links": 18579,
+        "unique_matches": 9289
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.6,
+        "node_count": 63,
+        "total_links": 1269,
+        "unique_matches": 634
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 591.66,
+        "node_count": 3,
+        "total_links": 54,
+        "unique_matches": 27
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 114.51,
+        "node_count": 5,
+        "total_links": 98,
+        "unique_matches": 49
+      }
+    ]
+  },
+  {
+    "generation": 14,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.78,
+        "node_count": 917,
+        "total_links": 18334,
+        "unique_matches": 9167
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.67,
+        "node_count": 73,
+        "total_links": 1465,
+        "unique_matches": 732
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 596.51,
+        "node_count": 4,
+        "total_links": 79,
+        "unique_matches": 39
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 109.24,
+        "node_count": 6,
+        "total_links": 122,
+        "unique_matches": 61
+      }
+    ]
+  },
+  {
+    "generation": 15,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.89,
+        "node_count": 931,
+        "total_links": 18622,
+        "unique_matches": 9311
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 597.57,
+        "node_count": 59,
+        "total_links": 1185,
+        "unique_matches": 592
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 593.94,
+        "node_count": 3,
+        "total_links": 58,
+        "unique_matches": 29
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 160.64,
+        "node_count": 7,
+        "total_links": 135,
+        "unique_matches": 67
+      }
+    ]
+  },
+  {
+    "generation": 16,
+    "stats": [
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 602.29,
+        "node_count": 1,
+        "total_links": 21,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.61,
+        "node_count": 929,
+        "total_links": 18578,
+        "unique_matches": 9289
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.68,
+        "node_count": 66,
+        "total_links": 1326,
+        "unique_matches": 663
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 119.23,
+        "node_count": 4,
+        "total_links": 75,
+        "unique_matches": 37
+      }
+    ]
+  },
+  {
+    "generation": 17,
+    "stats": [
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 601.05,
+        "node_count": 82,
+        "total_links": 1648,
+        "unique_matches": 824
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.66,
+        "node_count": 912,
+        "total_links": 18229,
+        "unique_matches": 9114
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 599.45,
+        "node_count": 1,
+        "total_links": 22,
+        "unique_matches": 11
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 111.41,
+        "node_count": 5,
+        "total_links": 101,
+        "unique_matches": 50
+      }
+    ]
+  },
+  {
+    "generation": 18,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.08,
+        "node_count": 874,
+        "total_links": 17476,
+        "unique_matches": 8738
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 596.73,
+        "node_count": 98,
+        "total_links": 1958,
+        "unique_matches": 979
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 587.64,
+        "node_count": 17,
+        "total_links": 340,
+        "unique_matches": 170
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 207.28,
+        "node_count": 11,
+        "total_links": 226,
+        "unique_matches": 113
+      }
+    ]
+  },
+  {
+    "generation": 19,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.9,
+        "node_count": 874,
+        "total_links": 17471,
+        "unique_matches": 8735
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.19,
+        "node_count": 109,
+        "total_links": 2193,
+        "unique_matches": 1096
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 597.32,
+        "node_count": 14,
+        "total_links": 276,
+        "unique_matches": 138
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 252.06,
+        "node_count": 3,
+        "total_links": 60,
+        "unique_matches": 30
+      }
+    ]
+  },
+  {
+    "generation": 20,
+    "stats": [
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 600.27,
+        "node_count": 150,
+        "total_links": 3009,
+        "unique_matches": 1504
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.87,
+        "node_count": 836,
+        "total_links": 16719,
+        "unique_matches": 8359
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 597.43,
+        "node_count": 6,
+        "total_links": 119,
+        "unique_matches": 59
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 139.73,
+        "node_count": 8,
+        "total_links": 153,
+        "unique_matches": 76
+      }
+    ]
+  },
+  {
+    "generation": 21,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.92,
+        "node_count": 833,
+        "total_links": 16665,
+        "unique_matches": 8332
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 597.82,
+        "node_count": 160,
+        "total_links": 3193,
+        "unique_matches": 1596
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 595.43,
+        "node_count": 1,
+        "total_links": 21,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 587.1,
+        "node_count": 2,
+        "total_links": 40,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 196.35,
+        "node_count": 4,
+        "total_links": 81,
+        "unique_matches": 40
+      }
+    ]
+  },
+  {
+    "generation": 22,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.15,
+        "node_count": 844,
+        "total_links": 16881,
+        "unique_matches": 8440
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.81,
+        "node_count": 149,
+        "total_links": 2980,
+        "unique_matches": 1490
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 591.25,
+        "node_count": 2,
+        "total_links": 41,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 202.64,
+        "node_count": 5,
+        "total_links": 98,
+        "unique_matches": 49
+      }
+    ]
+  },
+  {
+    "generation": 23,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.11,
+        "node_count": 820,
+        "total_links": 16405,
+        "unique_matches": 8202
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 599.81,
+        "node_count": 3,
+        "total_links": 60,
+        "unique_matches": 30
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.27,
+        "node_count": 170,
+        "total_links": 3397,
+        "unique_matches": 1698
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 175.59,
+        "node_count": 7,
+        "total_links": 138,
+        "unique_matches": 69
+      }
+    ]
+  },
+  {
+    "generation": 24,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.91,
+        "node_count": 818,
+        "total_links": 16349,
+        "unique_matches": 8174
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.68,
+        "node_count": 174,
+        "total_links": 3483,
+        "unique_matches": 1741
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 595.36,
+        "node_count": 2,
+        "total_links": 44,
+        "unique_matches": 22
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 113.35,
+        "node_count": 6,
+        "total_links": 124,
+        "unique_matches": 62
+      }
+    ]
+  },
+  {
+    "generation": 25,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.91,
+        "node_count": 818,
+        "total_links": 16362,
+        "unique_matches": 8181
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.86,
+        "node_count": 176,
+        "total_links": 3513,
+        "unique_matches": 1756
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 597.95,
+        "node_count": 2,
+        "total_links": 41,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 123.85,
+        "node_count": 4,
+        "total_links": 84,
+        "unique_matches": 42
+      }
+    ]
+  },
+  {
+    "generation": 26,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.16,
+        "node_count": 819,
+        "total_links": 16371,
+        "unique_matches": 8185
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 600.15,
+        "node_count": 173,
+        "total_links": 3468,
+        "unique_matches": 1734
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 594.13,
+        "node_count": 2,
+        "total_links": 37,
+        "unique_matches": 18
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 593.4,
+        "node_count": 1,
+        "total_links": 20,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 164.39,
+        "node_count": 5,
+        "total_links": 104,
+        "unique_matches": 52
+      }
+    ]
+  },
+  {
+    "generation": 27,
+    "stats": [
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 606.86,
+        "node_count": 1,
+        "total_links": 21,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.84,
+        "node_count": 805,
+        "total_links": 16115,
+        "unique_matches": 8057
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.35,
+        "node_count": 188,
+        "total_links": 3747,
+        "unique_matches": 1873
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 143.16,
+        "node_count": 6,
+        "total_links": 117,
+        "unique_matches": 58
+      }
+    ]
+  },
+  {
+    "generation": 28,
+    "stats": [
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 601.8,
+        "node_count": 1,
+        "total_links": 20,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.97,
+        "node_count": 182,
+        "total_links": 3641,
+        "unique_matches": 1820
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.91,
+        "node_count": 813,
+        "total_links": 16260,
+        "unique_matches": 8130
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 142.17,
+        "node_count": 4,
+        "total_links": 79,
+        "unique_matches": 39
+      }
+    ]
+  },
+  {
+    "generation": 29,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.04,
+        "node_count": 794,
+        "total_links": 15877,
+        "unique_matches": 7938
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.9,
+        "node_count": 199,
+        "total_links": 3981,
+        "unique_matches": 1990
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 599.81,
+        "node_count": 3,
+        "total_links": 62,
+        "unique_matches": 31
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 120.76,
+        "node_count": 4,
+        "total_links": 80,
+        "unique_matches": 40
+      }
+    ]
+  },
+  {
+    "generation": 30,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.85,
+        "node_count": 795,
+        "total_links": 15908,
+        "unique_matches": 7954
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.8,
+        "node_count": 194,
+        "total_links": 3881,
+        "unique_matches": 1940
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 597.95,
+        "node_count": 2,
+        "total_links": 41,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 168.56,
+        "node_count": 9,
+        "total_links": 170,
+        "unique_matches": 85
+      }
+    ]
+  },
+  {
+    "generation": 31,
+    "stats": [
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 600.0,
+        "node_count": 2,
+        "total_links": 39,
+        "unique_matches": 19
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.29,
+        "node_count": 794,
+        "total_links": 15862,
+        "unique_matches": 7931
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.25,
+        "node_count": 200,
+        "total_links": 4019,
+        "unique_matches": 2009
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 215.88,
+        "node_count": 4,
+        "total_links": 80,
+        "unique_matches": 40
+      }
+    ]
+  },
+  {
+    "generation": 32,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.8,
+        "node_count": 770,
+        "total_links": 15393,
+        "unique_matches": 7696
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.76,
+        "node_count": 222,
+        "total_links": 4442,
+        "unique_matches": 2221
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 598.5,
+        "node_count": 2,
+        "total_links": 40,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 174.56,
+        "node_count": 6,
+        "total_links": 125,
+        "unique_matches": 62
+      }
+    ]
+  },
+  {
+    "generation": 33,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.32,
+        "node_count": 787,
+        "total_links": 15737,
+        "unique_matches": 7868
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.77,
+        "node_count": 209,
+        "total_links": 4182,
+        "unique_matches": 2091
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 598.2,
+        "node_count": 2,
+        "total_links": 40,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 223.64,
+        "node_count": 2,
+        "total_links": 41,
+        "unique_matches": 20
+      }
+    ]
+  },
+  {
+    "generation": 34,
+    "stats": [
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 603.0,
+        "node_count": 1,
+        "total_links": 20,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 600.29,
+        "node_count": 2,
+        "total_links": 41,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 600.1,
+        "node_count": 214,
+        "total_links": 4299,
+        "unique_matches": 2149
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.73,
+        "node_count": 779,
+        "total_links": 15564,
+        "unique_matches": 7782
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 130.23,
+        "node_count": 4,
+        "total_links": 76,
+        "unique_matches": 38
+      }
+    ]
+  },
+  {
+    "generation": 35,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.84,
+        "node_count": 759,
+        "total_links": 15180,
+        "unique_matches": 7590
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.7,
+        "node_count": 228,
+        "total_links": 4563,
+        "unique_matches": 2281
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 597.45,
+        "node_count": 4,
+        "total_links": 80,
+        "unique_matches": 40
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 596.24,
+        "node_count": 3,
+        "total_links": 59,
+        "unique_matches": 29
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 207.67,
+        "node_count": 6,
+        "total_links": 118,
+        "unique_matches": 59
+      }
+    ]
+  },
+  {
+    "generation": 36,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.0,
+        "node_count": 760,
+        "total_links": 15185,
+        "unique_matches": 7592
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 598.72,
+        "node_count": 4,
+        "total_links": 79,
+        "unique_matches": 39
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.06,
+        "node_count": 226,
+        "total_links": 4532,
+        "unique_matches": 2266
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 596.4,
+        "node_count": 1,
+        "total_links": 20,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 216.04,
+        "node_count": 9,
+        "total_links": 184,
+        "unique_matches": 92
+      }
+    ]
+  },
+  {
+    "generation": 37,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 600.12,
+        "node_count": 759,
+        "total_links": 15177,
+        "unique_matches": 7588
+      },
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 598.86,
+        "node_count": 1,
+        "total_links": 21,
+        "unique_matches": 10
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 598.34,
+        "node_count": 233,
+        "total_links": 4665,
+        "unique_matches": 2332
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 228.76,
+        "node_count": 7,
+        "total_links": 137,
+        "unique_matches": 68
+      }
+    ]
+  },
+  {
+    "generation": 38,
+    "stats": [
+      {
+        "strategy": "ALL_C",
+        "avg_tourney_score": 603.89,
+        "node_count": 2,
+        "total_links": 37,
+        "unique_matches": 18
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 601.71,
+        "node_count": 2,
+        "total_links": 42,
+        "unique_matches": 21
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.98,
+        "node_count": 759,
+        "total_links": 15175,
+        "unique_matches": 7587
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.27,
+        "node_count": 234,
+        "total_links": 4683,
+        "unique_matches": 2341
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 211.9,
+        "node_count": 3,
+        "total_links": 63,
+        "unique_matches": 31
+      }
+    ]
+  },
+  {
+    "generation": 39,
+    "stats": [
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.78,
+        "node_count": 769,
+        "total_links": 15376,
+        "unique_matches": 7688
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.17,
+        "node_count": 227,
+        "total_links": 4545,
+        "unique_matches": 2272
+      },
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 596.1,
+        "node_count": 2,
+        "total_links": 40,
+        "unique_matches": 20
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 271.18,
+        "node_count": 2,
+        "total_links": 39,
+        "unique_matches": 19
+      }
+    ]
+  },
+  {
+    "generation": 40,
+    "stats": [
+      {
+        "strategy": "TF2T",
+        "avg_tourney_score": 602.82,
+        "node_count": 1,
+        "total_links": 17,
+        "unique_matches": 8
+      },
+      {
+        "strategy": "GRIM",
+        "avg_tourney_score": 599.53,
+        "node_count": 762,
+        "total_links": 15241,
+        "unique_matches": 7620
+      },
+      {
+        "strategy": "TFT",
+        "avg_tourney_score": 599.35,
+        "node_count": 234,
+        "total_links": 4682,
+        "unique_matches": 2341
+      },
+      {
+        "strategy": "CHAOTIC",
+        "avg_tourney_score": 221.82,
+        "node_count": 3,
+        "total_links": 60,
+        "unique_matches": 30
+      }
+    ]
+  }
+]
