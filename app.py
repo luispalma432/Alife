@@ -9,7 +9,7 @@ import streamlit as st
 st.set_page_config(page_title="Evolutionary Dashboard", layout="wide")
 st.title("🧬 Genetic Algorithm Analysis")
 
-# --- 1. FILE SELECTOR ---
+# FILE SELECTOR ---
 json_files = glob.glob("results_*.json")
 
 if not json_files:
@@ -19,7 +19,7 @@ if not json_files:
 selected_file = st.sidebar.selectbox("Select Simulation File", json_files)
 
 
-# --- 2. LOAD & PROCESS DATA ---
+# -LOAD & PROCESS DATA ---
 @st.cache_data
 def load_data(filepath):
     try:
@@ -51,7 +51,7 @@ def load_data(filepath):
 
 df = load_data(selected_file)
 
-# --- 3. VISUALIZATION DASHBOARD ---
+# ---  VISUALIZATION DASHBOARD ---
 if df is not None:
     # --- GLOBAL METRICS (Latest Generation) ---
     max_gen = df["Generation"].max()
