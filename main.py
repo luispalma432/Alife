@@ -14,7 +14,6 @@ if __name__ == "__main__":
     #Final population's strategy from each agent
     for i in results:
         print(i.strategy)
-    '''
     strategy_definitions = {
         "ALL_D (Nasty)": [0, 0, 0, 0],
         "TESTER (Nasty)": [0, 0, 0, 1],
@@ -30,11 +29,11 @@ if __name__ == "__main__":
     for name, genome in strategy_definitions.items():
         new_agent = agent.Agent(genome=genome)
         agents.append(new_agent)
+    '''
 
+    new_agent = agent.Agent(genome=[0, 1, 0, 0])  # CHAOTIC
     print('Starting Rl model Evaluation...')
     rl_agent = agent.RLAgent()
-    for ag in agents:
-        fc.tournament_RL(ag, rl_agent, rounds=500)
-        print()
+    fc.tournament_RL(new_agent, rl_agent, rounds=500)
     print('Q-Table:', rl_agent.q_table)
     print('Finished RL Model Evaluation...')

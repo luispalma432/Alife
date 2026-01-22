@@ -15,7 +15,7 @@ class Agent:
         # State variables for the simulation
         self.points = 0
         self.history = []
-        self.chaos_state = random.random()  # Used if strategy is "CHAOTIC"
+        self.chaos_state = 4.0 * 0.8 * (1.0 - 0.8)  # Used if strategy is "CHAOTIC"
 
     def reset(self):
         """Resets history and points for a new round/tournament."""
@@ -36,7 +36,7 @@ class Agent:
 #   d. Update Q-value using the Q-learning formula
 
 class RLAgent:
-    def __init__(self, learning_rate=0.1, discount_factor=0.9, epsilon=0.1):
+    def __init__(self, learning_rate=0.1, discount_factor=0.9, epsilon=0.5):
         self.points = 0
         self.history = []
         self.strategy = "RL_LEARNER"
