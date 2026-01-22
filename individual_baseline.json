@@ -1,0 +1,38 @@
+[
+  {
+    "strategy": "ALL_D",
+    "avg_tourney_score": 538.4
+  },
+  {
+    "strategy": "TESTER",
+    "avg_tourney_score": 389.93
+  },
+  {
+    "strategy": "BULLY",
+    "avg_tourney_score": 428.79
+  },
+  {
+    "strategy": "HARRINGTON",
+    "avg_tourney_score": 467.45
+  },
+  {
+    "strategy": "ALL_C",
+    "avg_tourney_score": 332.25
+  },
+  {
+    "strategy": "TF2T",
+    "avg_tourney_score": 428.98
+  },
+  {
+    "strategy": "TFT",
+    "avg_tourney_score": 470.65
+  },
+  {
+    "strategy": "GRIM",
+    "avg_tourney_score": 579.1
+  },
+  {
+    "strategy": "CHAOTIC",
+    "avg_tourney_score": 388.585
+  }
+]

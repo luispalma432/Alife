@@ -1,0 +1,30 @@
+[
+  {
+    "strategy": "TFT",
+    "avg_tourney_score": 608.47,
+    "node_count": 4,
+    "total_links": 35,
+    "unique_matches": 17
+  },
+  {
+    "strategy": "TF2T",
+    "avg_tourney_score": 598.93,
+    "node_count": 985,
+    "total_links": 7856,
+    "unique_matches": 3928
+  },
+  {
+    "strategy": "ALL_C",
+    "avg_tourney_score": 593.68,
+    "node_count": 4,
+    "total_links": 21,
+    "unique_matches": 10
+  },
+  {
+    "strategy": "CHAOTIC",
+    "avg_tourney_score": 406.46,
+    "node_count": 7,
+    "total_links": 56,
+    "unique_matches": 28
+  }
+]

@@ -566,3 +566,67 @@ def gaSimulation(N, k, type, mutation_rate, generations):
         print(f"ERROR: Could not save JSON file. {e}")
 
     return data_results
+
+
+def run_pd_cellular_automaton_lattice(side, steps, init_coop_prob=0.5):
+    """Run a Prisoner's Dilemma cellular automaton on a 2D lattice.
+
+    Each node is either C or D (using the global C/D constants).
+    At every time step:
+      1. Each node plays PD against all 8 Moore neighbors (defined by the 2D_LATTICE graph).
+      2. Payoffs are accumulated over all pairwise games.
+      3. Synchronously, each node copies the strategy (C/D) of the
+         highest‑payoff node in its neighborhood (including itself).
+
+    Returns
+    -------
+    history : list[dict]
+        Per‑step stats: fraction cooperators and average payoff.
+    final_state : dict[int, int]
+        Mapping node_id -> C or D at the last step.
+    """
+
+    # Build the lattice using your existing generator; k is ignored for 2D_LATTICE
+    N = side * side
+    G = generatePopulations(N=N, k=8, type="2D_LATTICE")
+
+    # Random initial condition
+    state = {
+        node: (C if random.random() < init_coop_prob else D) for node in G.nodes()
+    }
+
+    history: list[dict] = []
+
+    for t in range(steps):
+        # 1) Compute payoffs by playing PD on every edge
+        payoffs = {node: 0 for node in G.nodes()}
+        for i, j in G.edges():
+            p_i, p_j = scoring(state[i], state[j])
+            payoffs[i] += p_i
+            payoffs[j] += p_j
+
+        # Record stats for this step
+        num_coop = sum(1 for s in state.values() if s == C)
+        avg_payoff = sum(payoffs.values()) / N
+        history.append(
+            {
+                "step": t,
+                "fraction_cooperators": num_coop / N,
+                "avg_payoff": avg_payoff,
+            }
+        )
+
+        # 2) Synchronous update: imitate best‑payoff neighbor (including self)
+        new_state = {}
+        for node in G.nodes():
+            best_node = node
+            best_payoff = payoffs[node]
+            for neigh in G.neighbors(node):
+                if payoffs[neigh] > best_payoff:
+                    best_payoff = payoffs[neigh]
+                    best_node = neigh
+            new_state[node] = state[best_node]
+
+        state = new_state
+
+    return history, state
