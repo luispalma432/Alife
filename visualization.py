@@ -4,6 +4,8 @@ import matplotlib.animation as animation
 import numpy as np
 import functions as fc
 from matplotlib.colors import ListedColormap
+import streamlit as st
+import time
 
 def run_pd_ca_with_history(side, steps, init_coop_prob=0.5):
     N = side * side
@@ -46,32 +48,25 @@ def run_pd_ca_with_history(side, steps, init_coop_prob=0.5):
 
 
 def visualize_battle(grid_history):
-    fig, ax = plt.subplots(figsize=(8, 8))
+    st.title("Prisoner's Dilemma Community Battle")
 
-    # 0 = Red (Defect/Nasty), 1 = Blue (Cooperate/Nice)
-    # Based on your scoring: T=5, R=3, P=1, S=0
+    # Placeholder for the plot
+    plot_spot = st.empty()
+
+    # Custom Colormap
     cmap = ListedColormap(['#6b2323', '#1f2382'])
 
-    im = ax.imshow(grid_history[0], cmap=cmap, interpolation='nearest')
-    ax.axis('off')
+    for frame_idx, grid in enumerate(grid_history):
+        fig, ax = plt.subplots(figsize=(6, 6))
+        ax.imshow(grid, cmap=cmap)
+        ax.axis('off')
 
-    def update(frame):
-        # Update the grid data
-        im.set_data(grid_history[frame])
+        num_blue = int(np.sum(grid))
+        percent = (num_blue / grid.size) * 100
+        ax.set_title(f"Step {frame_idx} | Blue (C): {num_blue} ({percent:.1f}%)")
 
-        # Calculate statistics
-        num_blue = int(np.sum(grid_history[frame]))
-        total = grid_history[frame].size
-        percent = (num_blue / total) * 100
+        # Display in Streamlit
+        plot_spot.pyplot(fig)
+        plt.close(fig)  # Clean up memory
 
-        # We set the title on the axis directly.
-        # Removing blit=True makes this update reliably.
-        ax.set_title(f"Step {frame} | Blue (C): {num_blue} ({percent:.1f}%)", fontsize=14)
-
-        return [im]
-
-    # interval=2000 (2 seconds) as you requested
-    # blit=False ensures the title and text always update correctly
-    ani = animation.FuncAnimation(fig, update, frames=len(grid_history),
-                                  interval=2000, blit=False)
-    plt.show()
+        time.sleep(1)  # Control the "slow" speed

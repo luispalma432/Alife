@@ -6,6 +6,7 @@ import polars as pl
 import streamlit as st
 
 import functions as fc
+import visualization
 
 
 def generateFiles():
@@ -52,3 +53,6 @@ def Ca():
     regras para o CA função não tenho
     update eadge list
     """
+    history = visualization.run_pd_ca_with_history(side=100, steps=100, init_coop_prob=0.9)
+    visualization.visualize_battle(history)
+
