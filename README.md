@@ -1,10 +1,12 @@
 
 
 
+Create virtual Environment:  py 3.10 -m venv venv
+Activate: .\venv\Scripts\Activate  
+          
 
 
-
-
+Install packages:pip install -r requirementsWin.txt
 
 
 
