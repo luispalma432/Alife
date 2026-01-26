@@ -22,6 +22,13 @@ Run WebApp: streamlit run app.py
 
 
 
+##Caso utilização de Linux:
+In this case ARCH
+
+Run on home directory, due to orjson and polars Library  
+
+
+
 
 
 List packages: 
