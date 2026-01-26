@@ -7,25 +7,30 @@
 ![image_alt](https://github.com/luispalma432/Alife/blob/main/Scale%20free.png?raw=true)
 
 
-Create virtual Environment:  py 3.10 -m venv venv
+**Create virtual Environment:**  py 3.10 -m venv venv
 
 
 
-Activate: .\venv\Scripts\Activate  
+**Activate:** .\venv\Scripts\Activate  
           
 
 
-Install packages:pip install -r requirementsWin.txt
+**Install packages**:pip install -r requirementsWin.txt
 
 
-Run WebApp: streamlit run app.py
+**Run WebApp:** streamlit run app.py
 
 
-
-##Caso utilização de Linux:
+**In case of using Linux:**
 In this case ARCH
 
+
 Run on home directory, due to orjson and polars Library  
+
+**Create virtual Environment: ** python3.11 -m venv venv
+
+**Activate  virtual Environment:**   virtual Environment: source venv/bin/activate.fish
+
 
 
 
