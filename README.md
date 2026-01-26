@@ -27,7 +27,7 @@ In this case ARCH
 
 Run on home directory, due to orjson and polars Library  
 
-**Create virtual Environment: ** python3.11 -m venv venv
+**Create virtual Environment:** python3.11 -m venv venv
 
 **Activate  virtual Environment:**   virtual Environment: source venv/bin/activate.fish
 
