@@ -7,7 +7,7 @@
 ![image_alt](https://github.com/luispalma432/Alife/blob/main/Scale%20free.png?raw=true)
 
 
-**Create virtual Environment:**  py 3.10 -m venv venv
+**Create virtual Environment:**  py -3.10 -m venv venv
 
 
 
