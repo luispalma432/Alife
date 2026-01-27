@@ -3,7 +3,7 @@ import random
 
 import networkx as nx
 import orjson  # equivalente a json
-import polars as pl  #
+import polars as pl  # equivalete a pandas
 
 """
      Result(points)
@@ -167,7 +167,6 @@ def tournament(player1, player2, rounds):
     total_score1, total_score2 = 0, 0
     history1, history2 = [], []
 
-    # Initialize chaos state
     chaos_state = random.random()
 
     for _ in range(rounds):
@@ -181,7 +180,6 @@ def tournament(player1, player2, rounds):
         history1.append(p2_move)
         history2.append(p1_move)
 
-        # Update Chaos State (Logistic Map)
         chaos_state = 4.0 * chaos_state * (1.0 - chaos_state)
 
     return [total_score1, total_score2]
@@ -305,7 +303,7 @@ def generateEadgeList(G, genomeList):
 def populationEvaluation(population, type, population_List, node_Data_Map):
     """
     Avalia a população atual jogando o torneio.
-    NOTA: Removida a escrita de arquivo JSON interna para evitar sobrescrever dados.
+
     """
     iterations = 5
     nodes = population.number_of_nodes()
@@ -417,7 +415,7 @@ def run_evolution_step(population_List, node_scores, current_map, mutation_rate=
     scores_df = pl.DataFrame(
         {"node_id": list(node_scores.keys()), "score": list(node_scores.values())},
         schema={"node_id": pl.Int64, "score": pl.Float64},
-    )  # Ensure types match your IDs
+    )
 
     df_a = population_List.select(
         [pl.col("p1_id").alias("node_id"), pl.col("p2_id").alias("neighbor_id")]
@@ -434,19 +432,17 @@ def run_evolution_step(population_List, node_scores, current_map, mutation_rate=
         how="left",
     ).join(scores_df.rename({"score": "my_score"}), on="node_id", how="left")
 
-    # Filter: Keep only neighbors who are strictly BETTER than me
     better_neighbors = neighbors_df.filter(
         pl.col("neighbor_score") > pl.col("my_score")
     )
 
-    # Group By Node and pick the ONE neighbor with the Max Score
     best_imitation_df = (
         better_neighbors.sort("neighbor_score", descending=True)
         .unique(subset=["node_id"], keep="first")
         .select(["node_id", "neighbor_id"])
     )
 
-    # Convert the "Winners List" to a dictionary for fast lookup: {Node_ID: Target_Neighbor_ID}
+    # Convert the "Winners List"  {Node_ID: Target_Neighbor_ID}
     # These are the nodes that decided to change their strategy
     updates_dict = dict(
         zip(
@@ -455,7 +451,6 @@ def run_evolution_step(population_List, node_scores, current_map, mutation_rate=
         )
     )
 
-    # CREATE NEXT GENERATION (Mutation & Update) ---
     new_node_map = {}
 
     for node_id, old_data in current_map.items():
@@ -471,7 +466,6 @@ def run_evolution_step(population_List, node_scores, current_map, mutation_rate=
             bit_to_flip = random.randint(0, 3)
             new_genome[bit_to_flip] = 1 - new_genome[bit_to_flip]
 
-        # Save to New Map
         new_node_map[node_id] = {
             "genome": new_genome,
             "name": defineStrategies(new_genome),
@@ -481,47 +475,43 @@ def run_evolution_step(population_List, node_scores, current_map, mutation_rate=
     return new_node_map
 
 
-def update_edge_list(previous_df, current_node_map):
-    """
-    Updates the Polars DataFrame with the new strategies from the evolved map.
-    It reuses the topology (p1_id, p2_id) from the previous generation for speed.
-    """
-
-    # We strip away the old strategy names/genomes, keeping only the IDs
-    df = previous_df.select(["p1_id", "p2_id"])
-
-    # We "paint" the new strategies onto the existing IDs
-    df = df.with_columns(
+def update_edge_list(edge_df, current_node_map):
+    node_df = pl.DataFrame(
         [
-            # Update Player 1
-            pl.col("p1_id")
-            .map_elements(lambda x: current_node_map[x]["name"], return_dtype=pl.String)
-            .alias("p1_name"),
-            pl.col("p1_id")
-            .map_elements(
-                lambda x: current_node_map[x]["genome"], return_dtype=pl.List(pl.Int8)
-            )
-            .alias("p1_genome"),
-            # Update Player 2
-            pl.col("p2_id")
-            .map_elements(lambda x: current_node_map[x]["name"], return_dtype=pl.String)
-            .alias("p2_name"),
-            pl.col("p2_id")
-            .map_elements(
-                lambda x: current_node_map[x]["genome"], return_dtype=pl.List(pl.Int8)
-            )
-            .alias("p2_genome"),
-            # (Optional) Update Links count if you track it in the DF
-            pl.col("p1_id")
-            .map_elements(lambda x: current_node_map[x]["links"], return_dtype=pl.Int32)
-            .alias("p1_links"),
-            pl.col("p2_id")
-            .map_elements(lambda x: current_node_map[x]["links"], return_dtype=pl.Int32)
-            .alias("p2_links"),
+            {"id": k, "name": v["name"], "genome": v["genome"], "links": v["links"]}
+            for k, v in current_node_map.items()
         ]
     )
 
-    return df
+    # Vectorized Join (Instantaneous)
+    # We select only the topology (IDs) and join the new data
+    return (
+        edge_df.select(["p1_id", "p2_id"])
+        .join(
+            node_df.rename(
+                {
+                    "id": "p1_id",
+                    "name": "p1_name",
+                    "genome": "p1_genome",
+                    "links": "p1_links",
+                }
+            ),
+            on="p1_id",
+            how="left",
+        )
+        .join(
+            node_df.rename(
+                {
+                    "id": "p2_id",
+                    "name": "p2_name",
+                    "genome": "p2_genome",
+                    "links": "p2_links",
+                }
+            ),
+            on="p2_id",
+            how="left",
+        )
+    )
 
 
 def gaSimulation(N, k, type, mutation_rate, generations):
